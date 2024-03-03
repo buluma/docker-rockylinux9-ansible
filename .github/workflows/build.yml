@@ -1,13 +1,22 @@
 ---
-name: Build
+name: Build and Push Container
 
 on:
-  pull_request:
   push:
     branches:
       - master
+  workflow_dispatch:
+    inputs:
+      debug:
+        type: boolean
+        required: false
+        default: 'false'
   schedule:
-    - cron: "10 2 * * 0"
+    - cron: '18 3/3 * * *'
+
+concurrency:
+  group: ${{ github.ref }}-${{ github.workflow }}
+  cancel-in-progress: true
 
 jobs:
   # Test the image builds and works correctly.
@@ -16,13 +25,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
 
       - name: Test building image.
-        run: docker build -t docker-ansible .
+        run: docker build -t docker-test .
 
       - name: Run the built image.
-        run: docker run --name test-container -d --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro docker-ansible
+        run: docker run --name test-container -d --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro docker-test
+
+      - name: Verify systemctl in the built image.
+        run: docker exec --tty test-container env TERM=xterm systemctl --version
+
+      - name: Verify Ansible is accessible in the built image.
+        run: docker exec --tty test-container env TERM=xterm ansible --version
 
   # If on master branch, build and release image.
   release:
