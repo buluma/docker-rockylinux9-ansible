@@ -1,8 +1,8 @@
-# Rocky Linux 9 Ansible Test Image
+# Rocky Linux 8 (Green Obsidian) Docker container for Ansible.
 
-[![CI](https://github.com/buluma/docker-rockylinux9-ansible/workflows/Build/badge.svg?branch=master&event=push)](https://github.com/buluma/docker-rockylinux9-ansible/actions?query=workflow%3ABuild) [![Docker pulls](https://img.shields.io/docker/pulls/buluma/docker-rockylinux9-ansible)](https://hub.docker.com/r/buluma/docker-rockylinux9-ansible/)
+[![Build and Push Container](https://github.com/buluma/docker-rockylinux9-ansible/actions/workflows/build.yml/badge.svg)](https://github.com/buluma/docker-rockylinux9-ansible/actions/workflows/build.yml) [![Docker pulls](https://img.shields.io/docker/pulls/buluma/docker-rockylinux9-ansible?style=flat-square)](https://hub.docker.com/r/buluma/docker-rockylinux9-ansible/) ![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/buluma/docker-rockylinux9-ansible?style=flat-square) ![Docker Image Version (latest semver)](https://img.shields.io/docker/v/buluma/docker-rockylinux9-ansible?style=flat-square)
 
-Rocky Linux 9 Docker container for Ansible playbook and role testing.
+Rocky Linux 8 Docker container for Ansible playbook and role testing.
 
 ## Tags
 
@@ -18,6 +18,8 @@ This image is built on Docker Hub automatically any time the upstream OS contain
   2. `cd` into this directory.
   3. Run `docker build -t rockylinux9-ansible .`
 
+> Note: Switch between `master` and `testing` depending on whether you want the extra testing tools present in the resulting image.
+
 ## How to Use
 
   1. [Install Docker](https://docs.docker.com/engine/installation/).
@@ -31,8 +33,8 @@ This image is built on Docker Hub automatically any time the upstream OS contain
 
 I use Docker to test my Ansible roles and playbooks on multiple OSes using CI tools like Jenkins and Travis. This container allows me to test roles and playbooks using Ansible running locally inside the container.
 
-> **Important Note**: I use this image for testing in an isolated environment—not for production—and the settings and configuration used may not be suitable for a secure and performant production environment. Use on production servers/in the wild at your own risk!
+> **Important Note**: This image is used for testing in an isolated environment—not for production—and the settings and configuration used may not be suitable for a secure and performant production environment. Use on production servers/in the wild at your own risk!
 
 ## Author
 
-Created in 2022 by [Michael Buluma](https://www.github.com/buluma).
+Created in 2021 by [Michael Buluma](https://www.buluma.co.ke/).
