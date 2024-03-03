@@ -1,5 +1,6 @@
-FROM rockylinux:9
+FROM rockylinux:9.3
 LABEL maintainer="Michael Buluma"
+LABEL build_date="2024-03-03"
 ENV container=docker
 
 ENV pip_packages "ansible"
