@@ -1,4 +1,4 @@
-# Rocky Linux 8 (Green Obsidian) Docker container for Ansible.
+# Rocky Linux 9 (Blue Onyx) Docker container for Ansible.
 
 [![Build and Push Container](https://github.com/buluma/docker-rockylinux9-ansible/actions/workflows/build.yml/badge.svg)](https://github.com/buluma/docker-rockylinux9-ansible/actions/workflows/build.yml) [![Docker pulls](https://img.shields.io/docker/pulls/buluma/docker-rockylinux9-ansible?style=flat-square)](https://hub.docker.com/r/buluma/docker-rockylinux9-ansible/) ![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/buluma/docker-rockylinux9-ansible?style=flat-square) ![Docker Image Version (latest semver)](https://img.shields.io/docker/v/buluma/docker-rockylinux9-ansible?style=flat-square)
 
